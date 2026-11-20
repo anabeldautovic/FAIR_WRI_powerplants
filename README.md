@@ -1,7 +1,6 @@
 # GPPD-LD: the Global Power Plant Database as Linked Open Data
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.0000000.svg)](https://doi.org/10.5281/zenodo.0000000)
-<!-- Replace 0000000 with the Zenodo record number after the v1.0 release is archived. -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24392959.svg)](https://doi.org/10.5281/zenodo.24392959)
 
 This repository turns the **WRI Global Power Plant Database v1.3.0** (one CSV
 file, CC BY 4.0, a 3-star open dataset) into **5-star Linked Open Data**: RDF
@@ -79,6 +78,10 @@ python -m pipeline                 # full file (about 25 minutes, mostly SHACL v
 To use the published data without running anything, unzip
 `data/output/gppd-ld.ttl.gz` (e.g. `gzip -dk data/output/gppd-ld.ttl.gz`) or
 download `gppd-ld.ttl` from the latest release.
+
+Archived snapshots on Zenodo:
+- project (this repository, v1.0): <https://doi.org/10.5281/zenodo.24392959>
+- 5-star dataset (`gppd-ld.ttl.gz` and the ontology): <https://doi.org/10.5281/zenodo.24392978>
 
 Options:
 
