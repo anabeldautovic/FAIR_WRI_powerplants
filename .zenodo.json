@@ -1,0 +1,15 @@
+{
+  "title": "GPPD-LD: the Global Power Plant Database as 5-star Linked Open Data (project)",
+  "upload_type": "software",
+  "description": "<p>Project snapshot of GPPD-LD: the reproducible Python pipeline, application profile (LDAP), SHACL shapes, ontology and example SPARQL queries that convert the WRI Global Power Plant Database v1.3.0 (CSV, 3-star) into 5-star Linked Open Data. The output (34,936 plants, 1,948,266 triples, 0 SHACL violations) reuses DBpedia, the Open Energy Ontology, GeoSPARQL, PROV-O, RDF Data Cube, SKOS, ADMS and DCAT, and links to the EU country authority table and Wikidata.</p><p>University project, Seminars - Data Interoperability, MEIC, FEUP, 2026/2027, Group 2.</p>",
+  "creators": [
+    {"name": "Macedo, Tomás", "affiliation": "Faculdade de Engenharia da Universidade do Porto"},
+    {"name": "Almasan, Mara", "affiliation": "Faculdade de Engenharia da Universidade do Porto"},
+    {"name": "Dautovic, Anabel", "affiliation": "Faculdade de Engenharia da Universidade do Porto"}
+  ],
+  "license": "MIT",
+  "keywords": ["linked open data", "RDF", "SHACL", "power plants", "energy data", "FAIR"],
+  "related_identifiers": [
+    {"identifier": "https://datasets.wri.org/dataset/globalpowerplantdatabase", "relation": "isDerivedFrom", "resource_type": "dataset"}
+  ]
+}
