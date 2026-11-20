@@ -1,0 +1,4 @@
+pandas>=2.0
+rdflib>=7.0
+pyshacl>=0.26
+requests>=2.31

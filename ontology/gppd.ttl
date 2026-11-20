@@ -1,0 +1,137 @@
+# =====================================================================
+#  GPPD-LD ontology: the terms we mint under https://w3id.org/gppd-ld/ontology#
+#  plus the two SKOS concept schemes and the Data Cube structure (DSD).
+#  Group 2 · Data Interoperability, Seminars, MEIC, FEUP, 2026/2027
+#  See docs/EXE3-GPPD_LDAP.png ("Terms to mint" and "New resources").
+# =====================================================================
+
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:            <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:        <http://purl.org/dc/terms/> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbo:            <http://dbpedia.org/ontology/> .
+@prefix adms:           <http://www.w3.org/ns/adms#> .
+@prefix qb:             <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix gppd:           <https://w3id.org/gppd-ld/ontology#> .
+@prefix fuel:           <https://w3id.org/gppd-ld/fuel/> .
+@prefix method:         <https://w3id.org/gppd-ld/method/> .
+@prefix wd:             <http://www.wikidata.org/entity/> .
+
+<https://w3id.org/gppd-ld/ontology> a owl:Ontology ;
+    rdfs:label "GPPD-LD ontology"@en ;
+    dcterms:description "Terms minted to publish the WRI Global Power Plant Database v1.3.0 as Linked Data."@en ;
+    dcterms:creator "Tomás Macedo" , "Mara Almasan" , "Anabel Dautovic" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "1.0.0" .
+
+# --- minted properties -----------------------------------------------
+
+gppd:commissioningYear a owl:DatatypeProperty ;
+    rdfs:label "commissioning year"@en ;
+    rdfs:comment "Year the plant started operating; for multi-unit plants the capacity-weighted average, so it can be fractional."@en ;
+    rdfs:domain dbo:PowerStation ;
+    rdfs:range xsd:decimal ;
+    rdfs:isDefinedBy <https://w3id.org/gppd-ld/ontology> .
+
+gppd:capacityDataYear a owl:DatatypeProperty ;
+    rdfs:label "capacity data year"@en ;
+    rdfs:comment "Year in which the installed capacity value was reported."@en ;
+    rdfs:domain dbo:PowerStation ;
+    rdfs:range xsd:gYear ;
+    rdfs:isDefinedBy <https://w3id.org/gppd-ld/ontology> .
+
+gppd:plant a owl:ObjectProperty , qb:DimensionProperty ;
+    rdfs:label "plant"@en ;
+    rdfs:comment "The power plant an annual generation observation refers to."@en ;
+    rdfs:domain qb:Observation ;
+    rdfs:range dbo:PowerStation ;
+    qb:concept <http://dbpedia.org/ontology/PowerStation> ;
+    rdfs:isDefinedBy <https://w3id.org/gppd-ld/ontology> .
+
+gppd:estimationMethod a owl:ObjectProperty , qb:AttributeProperty , qb:CodedProperty ;
+    rdfs:label "estimation method"@en ;
+    rdfs:comment "The model used to estimate an annual generation value."@en ;
+    rdfs:domain qb:Observation ;
+    rdfs:range skos:Concept ;
+    qb:codeList gppd:EstimationMethodScheme ;
+    rdfs:isDefinedBy <https://w3id.org/gppd-ld/ontology> .
+
+# --- minted class ----------------------------------------------------
+
+gppd:WEPPIdentifier a owl:Class ;
+    rdfs:subClassOf adms:Identifier ;
+    rdfs:label "WEPP identifier"@en ;
+    rdfs:comment "Identifier of a plant in the S&P Global Platts World Electric Power Plants (WEPP) database."@en ;
+    rdfs:isDefinedBy <https://w3id.org/gppd-ld/ontology> .
+
+# --- Data Cube structure ---------------------------------------------
+
+gppd:generationDSD a qb:DataStructureDefinition ;
+    rdfs:label "Annual electricity generation per plant"@en ;
+    qb:component [ qb:dimension gppd:plant ] ,
+                 [ qb:dimension sdmx-dimension:refPeriod ] ,
+                 [ qb:measure sdmx-measure:obsValue ] ,
+                 [ qb:attribute sdmx-attribute:unitMeasure ] ,
+                 [ qb:attribute gppd:estimationMethod ] .
+
+# --- fuel categories -------------------------------------------------
+
+gppd:FuelScheme a skos:ConceptScheme ;
+    skos:prefLabel "GPPD fuel categories"@en .
+
+# Links to Wikidata, chosen by hand from each item's description. closeMatch,
+# not exactMatch: the GPPD categories are broader (e.g. "Gas" is mostly but
+# not only natural gas; "Oil" covers several petroleum fuels). "Other" has no match.
+fuel:Biomass      skos:closeMatch wd:Q18556 .    # bioenergy
+fuel:Coal         skos:closeMatch wd:Q24489 .    # coal
+fuel:Cogeneration skos:closeMatch wd:Q221620 .   # cogeneration
+fuel:Gas          skos:closeMatch wd:Q40858 .    # natural gas
+fuel:Geothermal   skos:closeMatch wd:Q3215493 .  # geothermal power
+fuel:Hydro        skos:closeMatch wd:Q80638 .    # hydroelectricity
+fuel:Nuclear      skos:closeMatch wd:Q12739 .    # nuclear power
+fuel:Oil          skos:closeMatch wd:Q22656 .    # petroleum
+fuel:Petcoke      skos:closeMatch wd:Q909123 .   # petroleum coke
+fuel:Solar        skos:closeMatch wd:Q1483757 .  # solar power
+fuel:Storage      skos:closeMatch wd:Q837718 .   # energy storage
+fuel:Waste        skos:closeMatch wd:Q2915573 .  # waste-to-energy
+fuel:WaveAndTidal skos:closeMatch wd:Q1887075 .  # marine energy
+fuel:Wind         skos:closeMatch wd:Q43302 .    # wind power
+
+fuel:Biomass      a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Biomass" ;        skos:prefLabel "Biomass"@en .
+fuel:Coal         a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Coal" ;           skos:prefLabel "Coal"@en .
+fuel:Cogeneration a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Cogeneration" ;   skos:prefLabel "Cogeneration"@en .
+fuel:Gas          a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Gas" ;            skos:prefLabel "Gas"@en .
+fuel:Geothermal   a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Geothermal" ;     skos:prefLabel "Geothermal"@en .
+fuel:Hydro        a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Hydro" ;          skos:prefLabel "Hydro"@en .
+fuel:Nuclear      a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Nuclear" ;        skos:prefLabel "Nuclear"@en .
+fuel:Oil          a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Oil" ;            skos:prefLabel "Oil"@en .
+fuel:Other        a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Other" ;          skos:prefLabel "Other"@en .
+fuel:Petcoke      a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Petcoke" ;        skos:prefLabel "Petcoke"@en .
+fuel:Solar        a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Solar" ;          skos:prefLabel "Solar"@en .
+fuel:Storage      a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Storage" ;        skos:prefLabel "Storage"@en .
+fuel:Waste        a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Waste" ;          skos:prefLabel "Waste"@en .
+fuel:WaveAndTidal a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Wave and Tidal" ; skos:prefLabel "Wave and Tidal"@en .
+fuel:Wind         a skos:Concept ; skos:inScheme gppd:FuelScheme ; skos:topConceptOf gppd:FuelScheme ; skos:notation "Wind" ;           skos:prefLabel "Wind"@en .
+
+# --- estimation methods (NO-ESTIMATION is not a method) --------------
+
+gppd:EstimationMethodScheme a skos:ConceptScheme ;
+    skos:prefLabel "GPPD generation estimation methods"@en ;
+    # The models are defined in WRI's technical note; they have no Wikidata items.
+    rdfs:seeAlso <https://www.wri.org/publication/estimating-power-plant-generation-global-power-plant-database> .
+
+method:CAPACITY-FACTOR-V1 a skos:Concept ; skos:inScheme gppd:EstimationMethodScheme ; skos:topConceptOf gppd:EstimationMethodScheme ;
+    skos:notation "CAPACITY-FACTOR-V1" ; skos:prefLabel "Capacity factor model v1"@en .
+method:HYDRO-V1 a skos:Concept ; skos:inScheme gppd:EstimationMethodScheme ; skos:topConceptOf gppd:EstimationMethodScheme ;
+    skos:notation "HYDRO-V1" ; skos:prefLabel "Hydro model v1"@en .
+method:SOLAR-V1 a skos:Concept ; skos:inScheme gppd:EstimationMethodScheme ; skos:topConceptOf gppd:EstimationMethodScheme ;
+    skos:notation "SOLAR-V1" ; skos:prefLabel "Solar model v1"@en .
+method:SOLAR-V1-NO-AGE a skos:Concept ; skos:inScheme gppd:EstimationMethodScheme ; skos:topConceptOf gppd:EstimationMethodScheme ;
+    skos:notation "SOLAR-V1-NO-AGE" ; skos:prefLabel "Solar model v1 without age"@en .
+method:WIND-V1 a skos:Concept ; skos:inScheme gppd:EstimationMethodScheme ; skos:topConceptOf gppd:EstimationMethodScheme ;
+    skos:notation "WIND-V1" ; skos:prefLabel "Wind model v1"@en .

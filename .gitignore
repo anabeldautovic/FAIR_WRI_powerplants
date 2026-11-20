@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated output: too large for git, published as a release asset instead
+data/output/*.ttl
+
+# Local secrets (Fuseki credentials etc.)
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Paper drafts (Overleaf project, not part of the software release)
+paper/

@@ -1,0 +1,456 @@
+qid,code,label,is_power_station,countries,coordinates
+Q455472,2543,Gwynt y Môr Wind Farm,true,Q145,Point(-3.58333333 53.45)
+Q614982,3119,Braes of Doune Wind Farm,true,Q145,Point(-4.0625 56.2761)
+Q763941,2509,Ormonde Wind Farm,true,Q145,Point(-3.4 54.1)
+Q820613,2510,Greater Gabbard wind farm,true,Q145,Point(1.94 51.88)
+Q833910,2495,Rhyl Flats,true,Q145,Point(-3.65 53.366666666)
+Q833917,2494,North Hoyle Offshore Wind Farm,true,Q145 Q25,Point(-3.452454 53.3907)
+Q914264,2507 2511,London Array,true,Q145,Point(1.55361 51.6439)
+Q1146238,6839,Dinorwig Power Station,true,Q145,Point(-4.107341766 53.117842582)
+Q1308246,2492,Kentish Flats Offshore Wind Farm,true,Q145,Point(1.09 51.46)
+Q1330226,2500 2506 2533,Walney Wind Farm,true,Q145,Point(-3.522 54.044)
+Q1521172,2403,SeaGen,true,Q145,Point(-5.546062 54.368661)
+Q1576615,2499,Thanet Wind Farm,true,Q145,Point(1.6331 51.4306)
+Q1629859,174 175 192 6659,Drax power station,true,Q145,Point(-0.996389 53.7358)
+Q2016017,2546,Barrow Offshore Wind Farm,true,Q145,Point(-3.28333 53.9833)
+Q2583856,2487 2539,Burbo Bank Offshore Wind Farm,true,Q145,Point(-3.16667 53.4833)
+Q3364824,2515 6501,Race Bank Wind Farm,true,Q145,Point(0.83333333 53.275)
+Q3364831,3177,Scout Moor Wind Farm,true,Q145,Point(-2.25194 53.6594)
+Q3364833,2534,Moray East Offshore Wind Farm,true,Q145,Point(-2.69852 58.16708)
+Q4019566,2757 3489 3981,Whitelee Wind Farm,true,Q145,Point(-4.285555555 55.672777777)
+Q4141649,6828,Viking Wind Farm,true,Q145,Point(-1.261222222 60.286611111)
+Q4788723,3258,Arecleoch Wind Farm,true,Q145,Point(-4.88222 55.0533)
+Q4877211,2521,Beatrice Wind Farm,true,Q145,Point(-3.07 58.13)
+Q4881352,3292 3387 4525,Beinn an Tuirc Wind Farm,true,Q145,Point(-5.57611 55.5714)
+Q4921161,3116,Black Law Wind Farm,true,Q145,Point(-3.73889 55.7669)
+Q5137058,4011 4178,Clyde Wind Farm,true,Q145,Point(-3.65444 55.4672)
+Q5191333,3114 3440 3536 4215 4631,Crystal Rig Wind Farm,true,Q145,Point(-2.55 55.9)
+Q5311735,2538,Dudgeon Offshore Wind Farm,true,Q145,Point(1.39 53.249)
+Q5436202,4676,Farr Wind Farm,true,Q145,Point(-4.09417 57.325)
+Q5446209,6840,Ffestiniog Power Station,true,Q145,Point(-3.96889 52.9808)
+Q5568417,388,Glendoe Hydro Scheme,true,Q145,Point(-4.556 57.093)
+Q5618736,2490,Gunfleet Sands Offshore Wind Farm,true,Q145,Point(1.17444 51.7394)
+Q5638120,3109,Hadyard Hill Wind Farm,true,Q145,Point(-4.72306 55.2458)
+Q6551320,2513,Lincs Wind Farm,true,Q145,Point(0.483333 53.1833)
+Q6665055,6601,Lochaber hydroelectric scheme,true,Q145,Point(-5.073 56.829)
+Q6989526,2479,Hywind Scotland,true,Q145,Point(-1.35 57.48333333)
+Q7162125,4595,Pen y Cymoedd,true,Q145,Point(-3.562 51.711)
+Q7290043,2520,Rampion Wind Farm,true,Q145,Point(-0.278888888 50.664722222)
+Q7439264,2498,Scroby Sands Wind Farm,true,Q145,Point(1.79028 52.6489)
+Q7495028,2512,Sheringham Shoal Offshore Wind Farm,true,Q145,Point(1.13333 53.1167)
+Q7694566,153,Teesport Renewable Energy Plant,true,Q145,Point(-1.1703 54.5975)
+Q7694582,2514,Teesside Wind Farm,true,Q145,Point(-1.095 54.648)
+Q7844328,2532,Triton Knoll Wind Farm,true,Q145,Point(0.9 53.4)
+Q7987061,2519,West of Duddon Sands Wind Farm,true,Q145,Point(-3.463 53.983)
+Q7987427,2545,Westermost Rough Wind Farm,true,Q145,Point(0.149 53.805)
+Q11969812,6842,Foyers Power Station,true,Q145,Point(-4.483527777 57.262111111)
+Q11987128,115,Lynemouth power station,true,Q145,Point(-1.52083 55.2042)
+Q15212096,6841,Cruachan Power Station,true,Q145,Point(-5.11305556 56.40638889)
+Q15226770,2544,Humber Gateway Wind Farm,true,Q145,Point(0.293 53.644)
+Q15261442,2522,Neart na Gaoithe Offshore Wind Farm,true,Q145,Point(-2.32083333 56.26777778)
+Q17347013,2524,East Anglia ONE,true,Q145,Point(2.3 52.66)
+Q17509465,2505,European Offshore Wind Deployment Centre,true,Q145,Point(-1.98333 57.2167)
+Q17569223,390,Fasnakyle Power Station,true,Q145,Point(-4.794 57.326083333)
+Q17574814,391,Kinlochleven Power Station,true,Q145,Point(-4.95803 56.7129)
+Q17774389,466,Lussa Power Station,true,Q145,Point(-5.58465 55.4761)
+Q17825924,404,Invergarry Power Station,true,Q145,Point(-4.77428757 57.071927559)
+Q29018007,4386,Kilgallioch Wind Farm,true,Q145,Point(-4.76527778 55.05)
+Q56026054,2526,Galloper Offshore Wind Farm,true,Q145,Point(1.992222222 51.771111111)
+Q57895949,6863,Leighton Buzzard Battery,true,Q145,
+Q77781986,468,Achanalt Power Station and Dam,true,Q145,Point(-4.832683 57.615952)
+Q84277667,2525,Hornsea One Offshore Wind Farm,true,Q145,Point(1.791 53.885)
+Q96375108,6502,Cleve Hill Solar Park,true,Q145,Point(0.919 51.338)
+Q106728173,2491,Inner Dowsing offshore wind farm,true,Q145,
+Q106728370,2493,Lynn offshore wind farm,true,Q145,
+Q106728914,2496,Robin Rigg (East) offshore wind farm,true,Q145,
+Q106729094,2497,Robin Rigg (West) offshore wind farm,true,Q145,
+Q111307233,467,Mullardoch Power Station,true,Q145,Point(-4.95452 57.33441)
+Q112619702,397,Striven Power Station,true,Q145,Point(-5.1195923 56.009044)
+Q113663075,2502,Hornsea Two Offshore Wind Farm,true,Q145,Point(1.5518 53.91)
+Q114030619,4028,Griffin Wind Farm,true,Q145,Point(-3.7435659 56.583251)
+Q114030622,11799934 4449,Solwaybank Wind Farm,false,Q145,Point(-3.1140898 55.107773)
+Q114030626,4671,Boyndie Wind Farm,true,Q145,Point(-2.6494898 57.665294)
+Q114030635,4623,Clashindarroch Wind Farm,true,Q145,Point(-2.9640069 57.363336)
+Q114030638,4009,Drumderg wind farm,true,Q145,Point(-3.3435355 56.68314)
+Q114030639,3579,Dun Law wind farm,true,Q145,Point(-2.8512555 55.805307)
+Q114030644,4119,Harestanes Wind Farm,true,Q145,Point(-3.5596388 55.244384)
+Q114030651,3647,Moy Wind Farm,true,Q145,Point(-4.0154701 57.406964)
+Q114030653,3837 4036,Spurness Wind Farm,true,Q145,Point(-2.6908634 59.190597)
+Q115794582,2540,Seagreen Wind Farm,true,Q145,Point(-1.741 56.588)
+Q115929386,4597,Stronelairg Wind Farm,true,Q145,
+Q115929443,4244,Dorenell Wind Farm,true,Q145,
+Q115929541,4059,Fallago Rig Wind Farm,true,Q145,
+Q115929575,4640,Bhlaraidh Wind Farm,true,Q145,Point(-4.7158 57.2456)
+Q115942251,2470,East Anglia THREE,true,Q145,
+Q115942263,5867,East Anglia TWO,true,Q145,
+Q115952280,2517,Dogger Bank C Wind Farm,true,Q145,
+Q115952416,6556,Sofia Wind Farm,true,Q145,Point(2.2301 54.9794)
+Q115952717,4586,South Kyle Wind Farm,true,Q145,
+Q115952916,932,Runcorn Energy from Waste,true,Q145,
+Q115954890,4552,Clocaenog Forest Wind Farm,true,Q145,
+Q115954919,4118,Dunmaglass Wind Farm,true,Q145,
+Q115954949,4431,Windy Standard II Wind Farm,true,Q145,
+Q115955192,11860578 4643,Kype Muir Wind Farm,true,Q145,
+Q115955243,3787,Beinneun Wind Farm,true,Q145,
+Q115955324,4300,Creag Riabhach Wind Farm,true,Q145,
+Q115955668,4033,Fullabrook Wind Farm,true,Q145,Point(-4.119376 51.122899)
+Q115955673,3435 3662,Gordonbush Wind Farm,true,Q145,
+Q115955724,4664,Corriegarth Wind Farm,true,Q145,
+Q115955735,4269,Dersalloch Wind Farm,true,Q145,
+Q115955770,4260,Keadby Wind Farm,true,Q145,Point(-0.752578 53.604181)
+Q115955825,4625,Strathy North Wind Farm,true,Q145,
+Q115955833,4261,Berry Burn Wind Farm,true,Q145,
+Q115955842,4368,Galawhistle Wind Farm,true,Q145,
+Q115955925,4687,Paul's Hill Wind Farm,true,Q145,
+Q115955940,4385,Kennoxhead Wind Farm,true,Q145,
+Q115956610,4445,Balmurrie Fell Wind Farm,true,Q145,Point(-4.7778 54.9675)
+Q115960566,4027,Calliachar Wind Farm,true,Q145,Point(-3.8748 56.5648)
+Q115962649,4675,Fairburn Wind Farm,true,Q145,Point(-4.64928 57.53186)
+Q115963110,3457,Toddleburn Wind Farm,true,Q145,Point(-2.872 55.768)
+Q115981381,6158,Moray West Offshore Wind Farm,true,Q145,Point(-2.988 58.094)
+Q116036189,4023,Drone Hill Wind Farm,true,Q145,
+Q116036206,4110,Andershaw Wind Farm,true,Q145,
+Q116036223,3128,Bicker Fen Wind Farm,true,Q145,
+Q116861310,4332 4526 4591,Aikengall Community Wind Farm,true,Q145,
+Q116861544,4331,A’Chruach Wind Farm,true,Q145,Point(-5.335 56.1292)
+Q116861652,4262,Afton Wind Farm,true,Q145,
+Q116861675,4032,Blackcraig Wind Farm,true,Q145,
+Q116863133,2673 3202,Kilbraur Wind Farm,true,Q145,
+Q116863896,4337,Auchrobert Wind Farm,true,Q145,
+Q116869658,4619,Carraig Gheal Wind Farm,true,Q145,
+Q116869720,3260,Mark Hill Wind Farm,true,Q145,
+Q116869934,2723 3598 4588 4682,Millennium Wind Farm,true,Q145,
+Q116869954,4371,Glen Kyllachy Wind Farm,true,Q145,
+Q116870059,6703,Sandy Knowe Wind Farm,true,Q145,
+Q116875376,3534 3951 6275,Rothes Wind Farm,true,Q145,Point(-3.36 57.53)
+Q116875547,4123,Lochluichart Wind Farm,true,Q145,
+Q116876403,4420,Tom na Clach Wind Farm,true,Q145,
+Q116876556,4021,Baillie Wind Farm,true,Q145,
+Q116876697,4006,Camster Wind Farm,true,Q145,
+Q116876722,4014,Hill of Towie Wind Farm,true,Q145,
+Q116877013,4120,Corriemoillie Wind Farm,true,Q145,
+Q116877111,4636,Halsary Wind Farm,true,Q145,
+Q116877160,3108,Causeymire Wind Farm,true,Q145,Point(-3.429715 58.437616)
+Q116877291,3846,Coire Na Cloiche Wind Farm,true,Q145,
+Q116877387,4674,Edinbane Wind Farm,true,Q145,
+Q116877483,4646,Bad a Cheo Wind Farm,true,Q145,
+Q116877573,6590,Twentyshilling Hill Wind Farm,true,Q145,Point(-3.9185 55.3142)
+Q116877635,4502,Whiteside Hill Wind Farm,true,Q145,
+Q116877673,4051,Rosehall Wind Farm,true,Q145,
+Q116877692,7562,Windy Rig Wind Farm,true,Q145,
+Q116877766,4189,Dalquhandy Wind Farm,true,Q145,
+Q116877792,4225,Harburnhead Wind Farm,true,Q145,
+Q116877822,4627 4667,Mid Hill Wind Farm,true,Q145,
+Q116877839,4381,Hill of Glaschyle Wind Farm,true,Q145,
+Q116877850,4073,Tralorg Wind Farm,true,Q145,
+Q116877868,4669,Beinn Tharsuinn Wind Farm,true,Q145,
+Q116877879,4441,Sanquhar Community Wind Farm,true,Q145,
+Q116877902,5393,Douglas West Wind Farm,true,Q145,
+Q116877917,4122,Burn of Whilk Wind Farm,true,Q145,
+Q116877925,4599,Tullymurdoch Wind Farm,true,Q145,
+Q116877933,3772,Cour Wind Farm,true,Q145,
+Q116877943,4440,Middle Muir Wind Farm,true,Q145,
+Q116877949,3666,Gordonstown Hill Wind Farm,true,Q145,
+Q116877955,3311,Glens of Foudland Wind Farm,true,Q145,Point(-2.65 57.414)
+Q116877969,2711 4157,Hare Hill Wind Farm,true,Q145,
+Q116877986,4633,Crossdykes Wind Farm,true,Q145,
+Q116878007,6920,West Burton B Battery,true,Q145,
+Q116878016,12725,Capenhurst Battery,true,Q145,Point(-2.943583333 53.265694444)
+Q116878065,3190 4365,Tullo Wind Farm,true,Q145,
+Q116878069,3886,Freasdail Wind Farm,true,Q145,
+Q116878077,4645,Assel Valley Wind Farm,true,Q145,
+Q116878082,4520,Dalswinton Wind Farm,true,Q145,
+Q116878093,4517,Minsca Wind Farm,true,Q145,
+Q116878109,15994,Burwell Battery,true,Q145,Point(0.316286335 52.278524081)
+Q116878153,6912,Roosecote Battery,true,Q145,Point(-3.189 54.105)
+Q116878177,7163,Arbroath Battery,true,Q145,Point(-2.619634 56.56497)
+Q116878223,8249,Brentwood BESS,true,Q145,Point(0.363037612 51.639733079)
+Q116878249,8392,Hunningley Stairfoot Battery,true,Q145,Point(-1.448461995 53.550265164)
+Q116878285,3627 4015,Ewe Hill Wind Farm,true,Q145,
+Q116878295,4462,Airies Wind Farm,true,Q145,
+Q116878303,3298,An Suidhe Wind Farm,true,Q145,
+Q116878310,4593,Glen App Wind Farm,true,Q145,
+Q116878322,4638,Glenchamber Wind Farm,true,Q145,
+Q116878801,12289849 7688,Holes Bay Battery,true,Q145,Point(-1.990097864 50.726374802)
+Q116878862,12293,Hawkers Hill Energy Park,true,Q145,Point(-2.208174 51.013772)
+Q116883955,6976,Port of Tyne Energy Storage,true,Q145,Point(-1.455827 54.977384)
+Q116883962,4373,Goole Fields Wind Farms,true,Q145,Point(-0.8822 53.6643)
+Q116883974,4437,Minnygap Wind Farm,true,Q145,
+Q116884092,7571,Cowley Battery Storage,true,Q145,Point(-1.189058 51.709925)
+Q116884182,8160,Bloxwich Battery,true,Q145,Point(-2.010761284 52.589045708)
+Q116884220,6927,Pen y Cymoedd Battery,true,Q145,Point(-3.585411 51.70721)
+Q116884290,20398,Aylesford Battery,true,Q145,Point(0.46241264 51.315108529)
+Q116884330,7140,Back Lane Battery,true,Q145,Point(-1.37484 53.22386)
+Q116884358,7005 7360,Pillswood Battery,true,Q145,
+Q116884451,7907,Bustleholme Battery,true,Q145,Point(-1.957359218 52.5533021)
+Q116884549,7019,Thurcroft Battery,true,Q145,Point(-1.268338631 53.403807055)
+Q116884580,7174,Whitelee Battery,true,Q145,Point(-4.17331 55.6954)
+Q116884738,7024,Mannington Battery Storage,true,Q145,Point(-1.814643 51.55234)
+Q116884818,7985,Skelmersdale Battery,true,Q145,Point(-2.80654156 53.562234029)
+Q116885413,7129,Glassenbury Battery Storage,true,Q145,Point(0.50798 51.093372)
+Q116885583,7044,Enderby Storage,true,Q145,Point(-1.222938939 52.598681498)
+Q116885651,7122,Creyke Beck Battery Storage,true,Q145,Point(-0.419015 53.79737)
+Q116886657,6945,Claredown Battery Storage,true,Q145,Point(0.608105 52.070574)
+Q116890190,20397,Hunningley Stairfoot BESS,true,Q145,Point(-1.45007 53.54841)
+Q116890267,7368,Kemsley Battery Storage,true,Q145,Point(0.742543 51.36674)
+Q116890392,12347159,Byers Brae Battery Storage,true,Q145,Point(-3.587963744 55.907150889)
+Q116894478,20399 20400 7773,Minety Battery Storage,true,Q145,
+Q116894501,7184 9063,Minety South Battery Storage,true,Q145,
+Q116894543,8264 9708,Newlands Farm Battery Storage,true,Q145,
+Q116895971,6925,Tynemouth Energy Storage System,true,Q145,
+Q116896049,6898,Pelham Battery Storage,true,Q145,
+Q116896378,6909,Dorking Battery Energy Storage System,true,Q145,
+Q116902714,7085,Hallen Battery Storage,true,Q145,
+Q116907433,7464,Lascar Battery Storage,true,Q145,
+Q116910664,4434 5637,Pogbie Wind Farm,true,Q145,
+Q116910739,4605,Blary Hill Wind Farm,true,Q145,
+Q116913510,6227,JG Pears Newark CHP,true,Q145,
+Q116916600,400,Orrin Power Station,true,Q145,Point(-4.61546 57.55408)
+Q116975230,395,Loch Gair Power Station,true,Q145,Point(-5.3359656 56.065561)
+Q116977099,405,Livishie Power Station,true,Q145,Point(-4.7280778 57.204956)
+Q117011275,9522,Wishaw Battery,true,Q145,Point(-3.93867 55.76927)
+Q117011366,9723,Blackhillock Battery,true,Q145,Point(-2.943026964 57.516140583)
+Q117034611,3448,Clachan Flats Wind Farm,true,Q145,
+Q117034625,6136,Kincardine Offshore Wind Farm,true,Q145,Point(-1.8596 57.0046)
+Q117034632,4516,Keith Hill Wind Farm,true,Q145,
+Q117037179,12429841 12777567,Coupar Battery Storage,true,Q145,Point(-3.272067712 56.537903152)
+Q117066391,7152,Fideoak Mill Battery Storage,true,Q145,Point(-3.157186 51.018497)
+Q117196754,116,Ferrybridge Multifuel Power Station,true,Q145,Point(-1.2796 53.7173)
+Q117196767,3,Ferrybridge Multifuel 2 Power Station,true,Q145,Point(-1.2871 53.7218)
+Q117352116,6366,Ystradffin Hydropower Plant,true,Q145,Point(-3.78883 52.097873)
+Q117409488,4348,Brownieleys Wind Farm,true,Q145,
+Q117422401,4213,Greengairs East Wind Farm,true,Q145,
+Q117462281,7058,Chapel Farm Battery Storage,true,Q145,Point(-0.4963 51.9266)
+Q117717825,4465 4524,Craig Wind Farm,true,Q145,
+Q117748788,2541,Dogger Bank A & B Wind Farm Cluster,false,,
+Q117768503,7088,Dollymans Battery Storage,true,Q145,
+Q117796670,3135 3668,Ben Aketil Wind Farm,true,Q145,Point(-6.463524 57.437547)
+Q117803592,3554,Deucheran Hill Wind Farm,true,Q145,Point(-5.5583 55.6397)
+Q117803657,3201,Earlsburn Wind Farm,true,Q145,Point(-4.097545 56.072511)
+Q117804587,393,Gaur Power Station,true,Q145,Point(-4.5086 56.6782)
+Q117804710,6856,Rise Carr Battery Storage,true,Q145,
+Q117804713,7462,Harker Battery Storage,true,Q145,
+Q117804749,6961,Lockleaze Battery Storage,true,Q145,Point(-2.571652712 51.484912906)
+Q117805967,12549589,Benbrack Wind Farm,true,Q145,
+Q118144516,8051,Larks Green Solar Farm,true,Q145,Point(-2.477369 51.57851)
+Q120356399,7946,West Gourdie Battery,true,Q145,
+Q120360122,7885,Coventry Battery Storage,true,Q145,
+Q120360277,7234,Fordtown Battery Storage,true,Q145,Point(-2.37049 57.22077)
+Q120360407,7591,Dunsinane Battery Storage,true,Q145,
+Q120360537,16075,Camilla Battery Storage,true,Q145,Point(-3.265533332 56.1090809)
+Q120401692,7630,Burwell Solar Farm,true,Q145,Point(0.302 52.283)
+Q120401888,8479,Breach Solar Farm,true,Q145,Point(0.361 52.287)
+Q120401957,7384,Aurora Solar Farm,true,Q145,Point(-1.41 51.78)
+Q120402427,5431,Staughton Airfield Solar Farm,true,Q145,Point(-0.3646 52.241)
+Q120667459,12920,Doncaster Battery Storage,true,Q145,
+Q120667636,7335,Tollgate BESS,true,Q145,Point(-0.23706 51.73539)
+Q120668073,6953,Melksham Battery Storage,true,Q145,
+Q120668403,6911,Larport Farm Battery,true,Q145,
+Q120668737,4501,Carscreugh Wind Farm,true,Q145,
+Q120671455,6914,Breach Farm Battery Storage,true,Q145,
+Q120671534,20396,Lower Road Battery,true,Q145,Point(0.357902561 51.640795163)
+Q122170316,11720 11721,Clay Tye Battery,true,Q145,
+Q122762065,11808 12321848,Little Raith Battery Storage,true,Q145,Point(-3.270452225 56.110313061)
+Q122762222,7780,Newton Wood Farm Battery Storage,true,Q145,Point(-1.322086876 53.13836326)
+Q123580869,10863,Jamesfield Battery Storage,true,Q145,Point(-3.291296 56.342269)
+Q123580913,6913,Bumpers BESS,true,Q145,Point(-0.888607215 51.749146145)
+Q123580995,3328,Cumberhead West Wind Farm,true,Q145,
+Q123581042,7155,Carnegie Road Battery,true,Q145,Point(-2.928598159 53.419406949)
+Q131282629,4988,Kirk Hill Wind Farm,true,Q145,
+Q132860674,7081,Cuxton Battery Storage,true,Q145,Point(0.464838 51.376606)
+Q132860683,16008,Sutton Bridge solar farm,true,Q145,Point(0.193206564 52.750058023)
+Q132860712,7283 9315,Sundon Battery Storage,true,Q145,Point(-0.498876115 51.933250723)
+Q132860730,8195 9626,Richborough Battery Storage,true,Q145,Point(1.342463594 51.311899565)
+Q132860738,10022,Ferrybridge Battery Storage,true,Q145,Point(-1.275705679 53.721005079)
+Q132860767,15164,Monk Fryston Battery Storage,true,Q145,Point(-1.267466803 53.75312634)
+Q132860801,20401,Winchester Battery,true,Q145,Point(-1.369662957 51.040005787)
+Q132860831,9183,Golds Hill BESS,true,Q145,Point(-2.030888888 52.540055555)
+Q132861039,6005 7708,Limekiln Wind Farm,true,Q145,Point(-3.721097 58.527796)
+Q132861052,8894,Tebworth Solar Farm,true,Q145,Point(-0.549574989 51.936080468)
+Q132861072,9653,Bredbury Battery Storage,true,Q145,Point(-2.132421535 53.415630358)
+Q132861107,8026,Bulphan Fen Solar Farm,true,Q145,Point(0.33521 51.53851)
+Q132861130,7012,Shilton Lane battery storage,true,Q145,Point(-4.479757235 55.902769633)
+Q132861154,8268,Lakeside Energy Park,true,Q145,Point(-0.989059287 53.732338957)
+Q132861252,7989 9224,Roaring Hill Battery Storage,true,Q145,Point(-3.203717897 56.207754338)
+Q135458322,4584,Strathy Wood Wind Farm,true,Q145,
+Q135526680,5455,Cumberhead Wind Farm,true,Q145,
+Q135526864,10780958 12548310 3220 3301 3593 7456,Hagshaw Hill Wind Farm,true,Q145,
+Q135527588,6708,Broken Cross wind farm,true,Q145,Point(-3.8280487 55.6165211)
+Q135733295,12470933 6607,North Kyle Wind Farm,true,Q145,Point(-4.355876 55.338298)
+Q135736255,3502,Enoch Hill Wind Farm,true,Q145,
+Q136122231,7696,Thurrock Storage,true,Q145,
+Q137596425,9610,Tye Lane Solar Farm,true,Q145,Point(1.08593 52.081289)
+Q137939870,12627898,Mona Offshore Wind Farm,true,Q145,
+Q137940059,12627914,Morecambe Offshore Wind Farm,true,Q145,
+Q137942815,5195,Golticlay Wind Farm,true,Q145,
+Q137943298,8468,Garbet Wind Farm,true,Q145,
+Q137944407,12275 12585484,Mill Rig Wind Farm,true,Q145,Point(-4.170145691 55.582852996)
+Q137946373,12545603 6826,Douglas West Wind Farm Extension,true,Q145,
+Q137948052,7340,Kilgallioch Wind Farm Extension,true,Q145,Point(-4.75648 54.99657)
+Q137948224,7476,Strathrory Wind Farm,true,Q145,Point(-4.286304079 57.770628045)
+Q137948854,10597704 3609,Deeping St Nicholas Wind Farm,true,Q145,
+Q137951177,6147,Pines Burn Wind Farm,true,Q145,Point(-2.728024759 55.341916437)
+Q137994109,12098257 4628,Kype Muir Wind Farm Extension,true,Q145,Point(-4.05842 55.60492)
+Q137995011,19593,Monk Fryston Battery Storage,true,Q145,Point(-1.265034769 53.753528979)
+Q137995344,12594541 9696,Kilmarnock South BESS,true,Q145,Point(-4.4671 55.577)
+Q137996366,10586,Thornton Greener Grid Park,true,Q145,Point(-0.825352757 53.901605715)
+Q137996380,7479,Bramford BESS,true,Q145,Point(1.065198749 52.072908705)
+Q137996385,8037,Enderby Battery Storage,true,Q145,Point(-1.21570443 52.59959847)
+Q137996401,11559 8439,Sizing John Battery,true,Q145,Point(-2.740046438 53.419836277)
+Q137996411,7395,Harestanes Battery,true,Q145,Point(-3.560023403 55.263981775)
+Q137996417,8052,Larks Green Battery,true,Q145,Point(-2.475361273 51.575923924)
+Q137996433,8830,Neilston Battery,true,Q145,Point(-4.473129801 55.808097123)
+Q137996443,8027,Bulphan Fen Warley Green Battery,true,,
+Q137996466,8895,Tebworth Battery,true,Q145,Point(-0.546399469 51.934107354)
+Q138001669,12476585 7614,Lapwing Fen 2 - BESS,true,Q145,Point(0.195733 52.72959)
+Q138002380,11201,Sheaf Energy Park,true,Q145,
+Q138006472,12584896 9404,Fiddlers Ferry Battery Storage,true,Q145,Point(-2.696984272 53.373995231)
+Q138006552,12325399 7856,Cleve Hill Battery Storage,true,Q145,Point(0.936039472 51.339599089)
+Q138006606,8283,Native River Battery Storage System,true,Q145,Point(-2.945797345 53.264661534)
+Q138006636,12582151 9377,Capenhurst Lane BESS,true,Q145,Point(-2.950248972 53.267863718)
+Q138008661,8455,Trondheim Way Battery energy storage,true,Q145,Point(-0.182567703 53.607264348)
+Q138008749,12392536 7015,Aikengall II BESS,true,Q145,Point(-2.485720781 55.907688576)
+Q138012034,12688194 13197 6926,Nevendon BESS,true,Q145,Point(0.486143776 51.594550323)
+Q138012062,10893 12627056,Wormald Green BESS,true,Q145,Point(-1.522639329 54.075389893)
+Q138012083,12626806,Hawthorn Pit BESS,true,Q145,Point(-1.400218751 54.806519649)
+Q138012174,10716 12619628,Buxton BESS,true,Q145,Point(-1.879399865 53.272652455)
+Q138012285,12548651 8142,Loudwater BESS,true,Q145,Point(-0.690481617 51.611889155)
+Q138012350,12549426 6929,Field Newport BESS,true,Q145,Point(-2.966577556 51.565774879)
+Q138012427,12317202,Rusholme BESS,true,Q145,Point(-0.941123065 53.731042795)
+Q138012578,11437 12304514,Swangate BESS,true,Q145,Point(-1.380317334 53.501777439)
+Q138012785,8096,Auchteraw BESS,true,Q145,Point(-4.727217505 57.127961417)
+Q138030217,12558265 8809,Blackpool BESS,true,Q145,Point(-3.026151581 53.848915108)
+Q138030643,12335992,Burwell 2 BESS,true,Q145,Point(0.31713675 52.278449704)
+Q138030731,12566930 9013,Cathkin BESS,true,Q145,Point(-4.195178892 55.786157756)
+Q138035274,12546715,Gerrards Cross BESS,true,Q145,Point(-0.531011366 51.578455201)
+Q138049057,11160,Oldham BESS,true,Q145,Point(-2.16588926 53.531116763)
+Q138142173,11787,Catsbrain Farm BESS,true,Q145,Point(-1.748687892 51.600746353)
+Q138153904,9046,Torquay BESS,true,Q145,Point(-3.544243356 50.487078958)
+Q138154984,9563,Whitebirk BESS,true,Q145,Point(-2.44467533 53.755811812)
+Q138197694,11663,Outer Dowsing Offshore Wind Farm,true,Q145,Point(1.3129 53.5583)
+Q138197905,2472,Hornsea Three Offshore Wind Farm,true,Q145,Point(1.261656152 52.58364686);Point(2.5571 53.8797)
+Q138204496,12982,Welkin Mill BESS,true,Q145,Point(-2.135928643 53.419100312)
+Q138205333,13740,Welkin Road BESS,true,Q145,Point(-2.136072986 53.416196893)
+Q138302182,475,Cia Aig Hydro,true,Q145,Point(-5.001 56.9561)
+Q138479867,11177,Kincraig Solar Farm,true,Q145,Point(-2.076010353 57.312931909)
+Q138479882,9014,Soay Solar Farm,true,Q145,Point(-0.835529595 53.911349453)
+Q138483020,12623,Trinity Hall Solar Farm,true,Q145,Point(-0.584007871 51.914962533)
+Q138485503,8472,Grounds Farm Solar Farm,true,Q145,Point(-0.6194 51.9335)
+Q138492469,13644,Thorpe Marsh BESS,true,Q145,Point(-1.102921821 53.579215675)
+Q138505861,8824,Long Meadow Solar Farm,true,Q145,Point(0.298905296 52.011181642)
+Q138505903,12101,Birch Solar Farm,true,Q145,Point(0.799068934 51.859261397)
+Q138506163,12102,Birch Farm Battery Storage,true,Q145,Point(0.798378264 51.856515269)
+Q138506440,12137,Feldon Vale Solar Farm,true,Q145,Point(-1.432290111 52.199764289)
+Q138506531,11799,Pepperhill Solar Farm,true,Q145,Point(-2.264631963 52.616013037)
+Q138507245,11590,Overhill BESS,true,Q145,Point(-2.51910851 57.405640071)
+Q138507567,10690,Whitegate BESS,true,Q145,Point(-2.168156 53.528347)
+Q138510305,8920,Broxburn BESS,true,Q145,Point(-3.461661707 55.915182966)
+Q138511981,11034,Coalburn I BESS,true,Q145,Point(-3.84581902 55.609188525)
+Q138512038,12206,Coalburn II BESS,true,Q145,Point(-3.821151209 55.608647665)
+Q138512457,8385,Dyce BESS,true,Q145,Point(-2.190575604 57.201942645)
+Q138522841,7570,Greenfield Road BESS,true,Q145,Point(-0.482404368 51.983748434)
+Q138526745,11725,Sambar Power BESS,true,Q145,Point(-4.901300849 50.393089551)
+Q138526878,14687,Indian Queens BESS,true,Q145,Point(-4.898968717 50.396963144)
+Q138527941,10936,Uskmouth BESS,true,Q145,Point(-2.968040908 51.546731397)
+Q138528011,15263,Afon Wysg I BESS,true,Q145,Point(-2.967637843 51.550852115)
+Q138567137,4896,Cockett Valley Solar Farm,true,Q145,Point(-4.012146 51.636078)
+Q138567294,1580,Langstone Court Road Solar Farm,true,Q145,Point(-2.912899 51.600167)
+Q138567320,1982,Court Colman Solar Farm,true,Q145,Point(-3.619326 51.523015)
+Q138567385,2176,Hafod-y-dafal Solar Farm,true,Q145,Point(-3.15893 51.727847)
+Q138683096,4480,Pencloe Wind Farm,true,Q145,Point(-4.196756819 55.330253786)
+Q138683230,4615,Windy Standard III Wind Farm,true,Q145,Point(-4.23557 55.27863)
+Q138688238,8434,Bramley BESS,true,Q145,Point(-1.071860434 51.333447284)
+Q138701488,9427,Hams Hall BESS,true,Q145,Point(-1.713899 52.536948)
+Q138701771,11656,Berkswell BESS,true,Q145,Point(-1.619343 52.38291)
+Q138701841,11866,Midsummer Norton BESS,true,Q145,Point(-2.470508364 51.291431824)
+Q138702421,7380,Sandridge BESS,true,Q145,Point(-2.100092695 51.377971841)
+Q138702442,1335,Sandridge Solar Farm,true,Q145,Point(-2.08971253 51.373357816)
+Q138706936,7813,Hulam Solar Farm,true,Q145,Point(-1.320212763 54.726864549)
+Q138708441,16393 7546 8091,Cowley complex Solar Farm,true,Q145,Point(-1.365808186 54.597034055);Point(-1.392211457 54.612298316);Point(-1.398617105 54.633019682)
+Q138708765,8254,Sheraton Hall Solar Farm,true,Q145,Point(-1.322804199 54.703379749)
+Q138713452,12339,Whinfield Solar Farm,true,Q145,Point(-1.53139 54.59633)
+Q138724398,12597,Tolldish Hall Farm Solar,true,Q145,Point(-1.453080077 52.463991431)
+Q138745240,6363,Priestgill Wind Farm,true,Q145,Point(-3.653856656 55.513424223)
+Q138745345,9237,Leigh Delamere Solar farm,true,Q145,Point(-2.173007673 51.507593561)
+Q138745496,9941,Kiln Fields Solar Farm,true,Q145,Point(-0.968582444 51.328165946)
+Q138745533,9090,Ducklington Solar Park,true,Q145,Point(-1.493370331 51.765166403)
+Q138745682,10778,Crays Hall Solar Farm,true,Q145,Point(0.459542813 51.610702925)
+Q138745745,6736,,true,Q145,Point(-1.904489322 57.590893169)
+Q138747513,7944,Perrinpit Solar Park,true,Q145,Point(-2.504228928 51.543637529)
+Q138747680,10577,Paddock Solar Farm,true,Q145,Point(0.440098352 51.16833331)
+Q138747749,8136,Kemble Solar Park,true,Q145,Point(-2.03387822 51.662862066)
+Q138747811,7889,Grimsby Solar Farm,true,Q145,Point(-0.16746633 53.559654755)
+Q138747881,9785,Gammaton Moor Solar farm,true,Q145,Point(-4.13519689 51.008042834)
+Q138747926,9542,Eastgate solar farm,true,Q145,Point(-0.425744173 54.248290513)
+Q138747985,8529,Burtree Lane Solar farm,true,Q145,Point(-1.573847241 54.563617246)
+Q138751842,8148,Bracon Ash Solar Farm,true,Q145,Point(1.212192626 52.562333214)
+Q138775349,9802,Rayleigh Solar Farm,true,Q145,Point(0.5793 51.5865)
+Q139587481,4351,Camster II Wind Farm,true,Q145,Point(-3.230266 58.419561)
+Q139589501,17132 17133 8134,Tacher Wind Farm,true,Q145,Point(-3.415417 58.404991)
+Q139591706,7134,Erskine BESS,true,Q145,Point(-4.4854513 55.9029202)
+Q139597120,14729,Wilton BESS,true,Q145,Point(-1.122227 54.574291)
+Q139659333,10089,Steeraway Farm Solar Farm,true,Q145,Point(-2.508114653 52.688607051)
+Q139659436,10369,Medebridge Solar Farm,true,Q145,Point(0.31704807 51.538919734)
+Q139659590,10088,Horsey Levels Solar Farm,true,Q145,Point(-2.97753 51.15828)
+Q139659619,8011,Three Maids Hill Solar Farm,true,Q145,Point(-1.34926 51.11367)
+Q139671013,9826,Ledwyche Solar Farm,true,Q145,Point(-2.673524 52.370145)
+Q139671292,10635,Rock Farm Solar Farm,true,Q145,Point(-2.68575 52.37356)
+Q139671310,15248,Rock Farm Solar Farm Battery Storage,true,Q145,Point(-2.689364 52.369286)
+Q139671960,6327,Longhill Burn Wind Farm,true,Q145,Point(-3.62436 55.81107)
+Q139672361,6214,Howpark wind farm,true,Q145,Point(-2.2443 55.88725)
+Q139678484,9394,Crimscote solar farm,true,Q145,Point(-1.676401 52.123877)
+Q139678701,8062,Wick Farm Solar Farm,true,Q145,Point(-2.146376852 51.398806505)
+Q139679217,10877 10878,Copse Lodge Solar Farm,true,Q145,Point(-1.193773733 52.063676079)
+Q139679290,9296,Town Farm Solar Park,true,Q145,Point(1.498658366 52.244288322)
+Q139679457,12852,Fraddon Solar Farm and Battery Storage,true,Q145,Point(-4.938900673 50.368642635)
+Q139679549,10181 10182,Raspberry Solar Farm and Battery Storage,true,Q145,Point(0.705617651 51.37611889)
+Q139679630,8843 8844,Moreton Solar Farm and Battery Storage,true,Q145,Point(-2.312467738 51.795103508);Point(-2.337287707 51.781488452)
+Q139679736,8038 8039,Claydon Farm - Solar Farm & Battery Storage,false,Q145,Point(-2.101689098 51.973855867)
+Q139679930,8528 9234,Doverdale - Solar Farm & Battery Storage,true,Q145,Point(-2.213384839 52.30170888)
+Q139680447,9441,Ashorne Hill Solar Farm,true,Q145,Point(-1.505260219 52.23931275);Point(-1.526993121 52.232660784)
+Q139680668,10797 10798,Laynes Wood Solar Farm and Battery Storage,true,Q145,Point(-2.349746835 51.909968579)
+Q139710499,9038 9039,Littleton Solar Farm and battery storage,true,Q145,Point(-1.848758953 52.116885248)
+Q139710734,11995,Braintree road BESS,true,Q145,Point(0.574020512 51.866295249)
+Q139737539,7701 7702,Oaklands Solar Farm and Battery Storage,true,Q145,Point(-3.3289217 51.4504466)
+Q139742358,12298 12299,Scurf Dyke Solar Farm and Battery Storage,true,Q145,Point(-0.40127629 53.954430642)
+Q139765697,7230,Berkeley BESS,true,Q145,Point(-2.418920172 51.683147239)
+Q139766458,9275,North Tawton BESS,true,Q145,Point(-3.913106383 50.795397568)
+Q139766761,11414,Wolverhampton West BESS,true,Q145,Point(-2.187537943 52.572800906)
+Q139769102,14091,Iron Acton BESS,true,Q145,Point(-2.477986368 51.568231536)
+Q139769238,14670,Kirkby BESS,true,Q145,Point(-2.850358609 53.467919815)
+Q139769427,13768,Legacy BESS,true,Q145,Point(-3.054493082 53.030207383)
+Q139769771,8009,Mill Hill BESS,true,Q145,Point(-0.211199767 51.617515551)
+Q139780642,9801,Rayleigh BESS,true,Q145,Point(0.560550481 51.619108527)
+Q139781118,8834,Sandon Brook Solar Farm & Battery Storage,true,Q145,Point(0.532199712 51.665305254)
+Q139795701,14205,Skeeby BESS,true,Q145,Point(-1.701736785 54.412616252)
+Q139795721,8131,Skeeby Solar Farm,true,Q145,Point(-1.700238136 54.410946988)
+Q139807237,4128,Sneddon Law Community Wind Farm,true,Q145,Point(-4.35554 55.6346)
+Q139817342,7469,Tycroes Solar Farm,true,Q145,Point(-4.030437155 51.767310233);Point(-4.041327162 51.766639882);Point(-4.067431013 51.764619052)
+Q139817636,9977,Brynrhyd Solar Farm,true,Q145,Point(-4.040486054 51.753680719)
+Q139820106,7519,Corner Copse Solar Farm,true,Q145,Point(-1.740175046 51.6151196)
+Q139830959,8149,Bunkers Hill Solar Farm,true,Q145,Point(-0.952432805 51.300430291)
+Q139831134,13246,Worset Solar Farm,true,Q145,Point(-1.279169227 54.699808546)
+Q139831175,8251,Layer Solar Farm,true,Q145,Point(0.844754492 51.841295686)
+Q139850397,7817,Higher Stockbridge Solar Farm,true,Q145,Point(-2.525723242 50.895545188)
+Q139850494,6588,High Park Foot Solar Farm,true,Q145,Point(-2.776922913 55.056221142)
+Q139851551,7887,Hasland Solar Farm,true,Q145,Point(-1.387691169 53.214744532)
+Q139852889,7956,Harlesford Solar Farm,true,Q145,Point(-1.013457049 51.704513093)
+Q139852897,7945,Cornwell Solar Farm,true,Q145,Point(-1.034844631 51.701408826)
+Q139858530,9173,Eastfields Solar Farm,true,Q145,Point(-1.431919213 52.23987793)
+Q139860357,8228,Bishampton Solar Farm,true,Q145,Point(-2.002026692 52.160869494)
+Q139860633,8842,Cullerlie Solar Farm,true,Q145,Point(-2.366984588 57.115142709)
+Q139890143,8813,Cawarden Solar Farm,true,Q145,Point(-1.917808669 52.766041787)
+Q139890241,7815,Houndbeare Solar Farm,true,Q145,Point(-3.340781 50.734258)
+Q139891371,6701,Gorse Lane Solar Farm,true,Q145,Point(-0.404177823 52.965715816)
+Q139900220,8257,Siddington Solar Farm,true,Q145,Point(-1.950520819 51.689211929)
+Q139918589,10045,Preston Farm Solar Array,true,Q145,Point(-1.158244379 51.179557576)
+Q139968325,8517,Vicarage Drove Solar Farm,true,Q145,Point(-0.230623785 52.931376014)
+Q139980541,8219 8220,Three Bridges Solar Farm and Battery Storage,true,Q145,Point(1.04374387 52.717420025)
+Q139990205,8221,Burgate Solar Farm,true,Q145,Point(1.304518796 52.705860577)
+Q140249896,6557,Little Crow Solar Park,true,Q145,Point(-0.576316341 53.579905493)
+Q140456225,8527,Coylton Greener Grid Park,true,Q145,Point(-4.43176 55.44677)
+Q140456309,8848,Hirwaun BESS,true,Q145,Point(-3.540725 51.743219)
+Q140471421,2767,Chirmorie Wind Farm,true,Q145,Point(-4.828068339 55.051429696)
+Q141104808,6629,Sanquhar II Wind Farm,true,Q145,Point(-4.05203 55.31093)
+Q142069174,13225,Bankside BESS,true,Q145,Point(-3.781282617 56.013284876)
+Q142069238,12297,Driffield BESS,true,Q145,Point(-0.413478179 53.995438529)

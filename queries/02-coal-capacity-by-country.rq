@@ -1,0 +1,14 @@
+# The ten countries with the most coal capacity (GW), counting plants whose
+# primary fuel is coal.
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX fuel: <https://w3id.org/gppd-ld/fuel/>
+
+SELECT ?country (COUNT(?plant) AS ?plants) (ROUND(SUM(?watts) / 1e9) AS ?gigawatts)
+WHERE {
+  ?plant dbo:primaryFuelType fuel:Coal ;
+         dbo:installedCapacity ?watts ;
+         dbo:country ?country .
+}
+GROUP BY ?country
+ORDER BY DESC(?gigawatts)
+LIMIT 10

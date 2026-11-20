@@ -1,0 +1,27 @@
+# Reported versus estimated generation (GWh) of the same plant in the same year,
+# with the model that made the estimate. Shows the plants where the estimate is
+# furthest from the reported value. Possible only because both kinds of values
+# are observations with the same dimensions (plant, year).
+PREFIX qb:             <http://purl.org/linked-data/cube#>
+PREFIX dcterms:        <http://purl.org/dc/terms/>
+PREFIX skos:           <http://www.w3.org/2004/02/skos/core#>
+PREFIX gppd:           <https://w3id.org/gppd-ld/ontology#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#>
+
+SELECT ?name ?year ?reported ?estimated ?method
+WHERE {
+  ?r qb:dataSet gppd:reportedGeneration ;
+     sdmx-measure:obsValue ?reported ;
+     gppd:plant ?plant ;
+     sdmx-dimension:refPeriod ?year .
+  FILTER (?reported > 1000)
+  ?e gppd:plant ?plant ;
+     sdmx-dimension:refPeriod ?year ;
+     qb:dataSet gppd:estimatedGeneration ;
+     sdmx-measure:obsValue ?estimated ;
+     gppd:estimationMethod/skos:notation ?method .
+  ?plant dcterms:title ?name .
+}
+ORDER BY DESC(ABS(?estimated - ?reported) / ?reported)
+LIMIT 10

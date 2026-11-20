@@ -1,0 +1,657 @@
+# =====================================================================
+#  GPPD-LD · SHACL shapes for the Linked Data Application Profile (EXE 3)
+#  Group 2 · Data Interoperability, Seminars, MEIC, FEUP, 2026/2027
+#  Tomás Macedo, Mara Almasan, Anabel Dautovic
+#
+#  The constraints matrix of EXE3-GPPD_LDAP.drawio in machine-checkable
+#  form: one node shape per class box, one sh:property per line or arrow.
+#
+#  Cardinality:  [1]    -> sh:minCount 1 ; sh:maxCount 1
+#                [0..1] -> sh:maxCount 1
+#                [0..3] -> sh:maxCount 3
+#                [1..n] -> sh:minCount 1
+#                [0..n] -> no count
+#
+#  Validate the RDF output (not the CSV). The SKOS concept schemes and
+#  gppd:generationDSD must be in the same data graph.
+#    local:   pyshacl -s gppd-shapes.ttl -df turtle gppd-data.ttl
+#    Fuseki:  POST this file to  .../G02/shacl?graph=default
+#
+#  Severity: every rule is a sh:Violation, except the two checks that go
+#  beyond the diagram (distribution details), which are sh:Warning.
+# =====================================================================
+
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:            <http://www.w3.org/2002/07/owl#> .
+@prefix dbo:            <http://dbpedia.org/ontology/> .
+@prefix oeo:            <http://openenergy-platform.org/ontology/oeo/> .
+@prefix geo:            <http://www.opengis.net/ont/geosparql#> .
+@prefix sf:             <http://www.opengis.net/ont/sf#> .
+@prefix prov:           <http://www.w3.org/ns/prov#> .
+@prefix adms:           <http://www.w3.org/ns/adms#> .
+@prefix dcterms:        <http://purl.org/dc/terms/> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat:           <http://www.w3.org/ns/dcat#> .
+@prefix qb:             <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix unit:           <http://qudt.org/vocab/unit/> .
+@prefix gppd:           <https://w3id.org/gppd-ld/ontology#> .
+@prefix shape:          <https://w3id.org/gppd-ld/shapes#> .
+
+
+# ---------------------------------------------------------------------
+# 1. POWER PLANT  ·  dbo:PowerStation (also geo:Feature, oeo:OEO_00000031)
+# ---------------------------------------------------------------------
+
+shape:PowerStationShape
+    a sh:NodeShape ;
+    rdfs:label "Power plant" ;
+    sh:targetClass dbo:PowerStation ;
+    sh:targetObjectsOf gppd:plant ;
+    sh:nodeKind sh:IRI ;
+    sh:class dbo:PowerStation , geo:Feature , oeo:OEO_00000031 ;
+    sh:message "Power plant: must be an IRI typed dbo:PowerStation, geo:Feature and oeo:OEO_00000031." ;
+
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one non-empty GPPD identifier (gppd_idnr), xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one non-empty name (dcterms:title), xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path dbo:installedCapacity ;
+        sh:datatype xsd:double ;
+        sh:minInclusive "0"^^xsd:double ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one installed capacity in watts (capacity_mw x 1,000,000), xsd:double, not negative." ;
+    ] ;
+    sh:property [
+        sh:path dbo:primaryFuelType ;
+        sh:nodeKind sh:IRI ;
+        sh:node shape:FuelConceptShape ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one primary fuel, a concept of gppd:FuelScheme." ;
+    ] ;
+    sh:property [
+        sh:path dbo:otherFuelType ;
+        sh:nodeKind sh:IRI ;
+        sh:node shape:FuelConceptShape ;
+        sh:maxCount 3 ;
+        sh:message "Power plant: at most three other fuels, each a concept of gppd:FuelScheme." ;
+    ] ;
+    sh:property [
+        sh:path gppd:capacityDataYear ;
+        sh:datatype xsd:gYear ;
+        sh:maxCount 1 ;
+        sh:message "Power plant: at most one capacity data year, xsd:gYear." ;
+    ] ;
+    sh:property [
+        sh:path gppd:commissioningYear ;
+        sh:datatype xsd:decimal ;
+        sh:maxCount 1 ;
+        sh:message "Power plant: at most one commissioning year, xsd:decimal (may be fractional)." ;
+    ] ;
+    sh:property [
+        sh:path geo:hasGeometry ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class sf:Point ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one location, an sf:Point." ;
+    ] ;
+    sh:property [
+        sh:path dbo:country ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://publications[.]europa[.]eu/resource/authority/country/[A-Z]{3}$" ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one country, an EU authority IRI ending in the ISO alpha-3 code (e.g. country:PRT)." ;
+    ] ;
+    sh:property [
+        sh:path dbo:owner ;
+        sh:class prov:Organization ;
+        sh:maxCount 1 ;
+        sh:message "Power plant: at most one owner, a prov:Organization." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:class prov:Organization ;
+        sh:maxCount 1 ;
+        sh:message "Power plant: at most one data source, a prov:Organization." ;
+    ] ;
+    sh:property [
+        sh:path prov:hadPrimarySource ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:message "Power plant: at most one source document, an IRI (web page or ftp file)." ;
+    ] ;
+    sh:property [
+        sh:path adms:identifier ;
+        sh:class gppd:WEPPIdentifier ;
+        sh:message "Power plant: identifiers must be gppd:WEPPIdentifier resources." ;
+        # [0..n]: no count.
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:nodeKind sh:IRI ;
+        sh:class dcat:Dataset ;
+        sh:node [ sh:not [ sh:class qb:DataSet ] ] ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Power plant: exactly one dcterms:isPartOf, the main dcat:Dataset (not a generation qb:DataSet)." ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 2. LOCATION  ·  sf:Point (also geo:Geometry)
+# ---------------------------------------------------------------------
+
+shape:PointShape
+    a sh:NodeShape ;
+    rdfs:label "Plant location" ;
+    sh:targetClass sf:Point ;
+    sh:targetObjectsOf geo:hasGeometry ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:class sf:Point , geo:Geometry ;
+    sh:message "Location: must be typed sf:Point and geo:Geometry." ;
+
+    sh:property [
+        sh:path geo:asWKT ;
+        sh:datatype geo:wktLiteral ;
+        sh:pattern "^POINT\\s*\\(\\s*[+-]?[0-9]+([.][0-9]+)?\\s+[+-]?[0-9]+([.][0-9]+)?\\s*\\)$" ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Location: exactly one geo:wktLiteral of the form POINT(longitude latitude)." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:class prov:Organization ;
+        sh:maxCount 1 ;
+        sh:message "Location: at most one geolocation source, a prov:Organization." ;
+    ] .
+
+# Conversion rule "POINT(longitude latitude)": catches swapped or impossible
+# coordinates (longitude -180..180, latitude -90..90).
+shape:CoordinateRangeShape
+    a sh:NodeShape ;
+    sh:targetClass sf:Point ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Location: coordinates out of range; expected POINT(longitude latitude), longitude -180..180, latitude -90..90." ;
+        sh:select """
+            PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            SELECT $this ?value WHERE {
+                $this geo:asWKT ?value .
+                BIND (REPLACE(REPLACE(STR(?value), "^\\\\s*POINT\\\\s*\\\\(\\\\s*", "", "i"), "\\\\s*\\\\)\\\\s*$", "") AS ?xy)
+                BIND (xsd:decimal(REPLACE(?xy, "\\\\s+.*$", "")) AS ?lon)
+                BIND (xsd:decimal(REPLACE(?xy, "^\\\\S+\\\\s+", "")) AS ?lat)
+                FILTER (?lon < -180 || ?lon > 180 || ?lat < -90 || ?lat > 90)
+            }
+        """ ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 3. ORGANISATION  ·  prov:Organization (owner, data source, publisher)
+# ---------------------------------------------------------------------
+
+shape:OrganizationShape
+    a sh:NodeShape ;
+    rdfs:label "Organisation" ;
+    sh:targetClass prov:Organization ;
+    sh:targetObjectsOf dbo:owner , prov:wasAttributedTo , dcterms:publisher ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:class prov:Organization ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Organisation: exactly one non-empty name (rdfs:label), xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path owl:sameAs ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://www[.]wikidata[.]org/entity/Q[1-9][0-9]*$" ;
+        sh:maxCount 1 ;
+        sh:message "Organisation: at most one owl:sameAs, a Wikidata entity IRI (only for checked matches)." ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 4. WEPP IDENTIFIER  ·  gppd:WEPPIdentifier (subclass of adms:Identifier)
+# ---------------------------------------------------------------------
+
+shape:WEPPIdentifierShape
+    a sh:NodeShape ;
+    rdfs:label "WEPP identifier" ;
+    sh:targetClass gppd:WEPPIdentifier ;
+    sh:targetObjectsOf adms:identifier ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:class gppd:WEPPIdentifier ;
+
+    sh:property [
+        sh:path skos:notation ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "WEPP identifier: exactly one non-empty skos:notation, xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path adms:schemaAgency ;
+        sh:hasValue "S&P Global Platts WEPP" ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "WEPP identifier: adms:schemaAgency must be exactly \"S&P Global Platts WEPP\"." ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 5. CONTROLLED VOCABULARIES  ·  gppd:FuelScheme, gppd:EstimationMethodScheme
+#    Checked by notation, so the rule does not depend on the concept IRIs
+#    chosen by the pipeline.
+# ---------------------------------------------------------------------
+
+shape:FuelConceptShape
+    a sh:NodeShape ;
+    rdfs:label "Fuel category" ;
+    sh:targetObjectsOf dbo:primaryFuelType , dbo:otherFuelType ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue gppd:FuelScheme ;
+        sh:message "Fuel: the concept must be skos:inScheme gppd:FuelScheme." ;
+    ] ;
+    sh:property [
+        sh:path skos:notation ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( "Biomass" "Coal" "Cogeneration" "Gas" "Geothermal" "Hydro" "Nuclear" "Oil"
+                "Other" "Petcoke" "Solar" "Storage" "Waste" "Wave and Tidal" "Wind" ) ;
+        sh:message "Fuel: skos:notation must be one of the 15 GPPD fuel categories." ;
+    ] .
+
+shape:EstimationMethodConceptShape
+    a sh:NodeShape ;
+    rdfs:label "Estimation method" ;
+    sh:targetObjectsOf gppd:estimationMethod ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue gppd:EstimationMethodScheme ;
+        sh:message "Estimation method: the concept must be skos:inScheme gppd:EstimationMethodScheme." ;
+    ] ;
+    sh:property [
+        sh:path skos:notation ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( "CAPACITY-FACTOR-V1" "HYDRO-V1" "SOLAR-V1" "SOLAR-V1-NO-AGE" "WIND-V1" ) ;
+        sh:message "Estimation method: one of the five GPPD methods; NO-ESTIMATION is not a method." ;
+    ] .
+
+# Every member of either scheme: one notation, at least one label.
+shape:SchemeConceptShape
+    a sh:NodeShape ;
+    rdfs:label "Concept of a gppd scheme" ;
+    sh:targetSubjectsOf skos:inScheme ;
+    sh:class skos:Concept ;
+
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:in ( gppd:FuelScheme gppd:EstimationMethodScheme ) ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Concept: exactly one skos:inScheme, gppd:FuelScheme or gppd:EstimationMethodScheme." ;
+    ] ;
+    sh:property [
+        sh:path skos:notation ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Concept: exactly one skos:notation, xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:uniqueLang true ;
+        sh:minCount 1 ;
+        sh:message "Concept: at least one skos:prefLabel, at most one per language." ;
+    ] .
+
+# Size of each scheme: 15 fuels, 5 methods.
+shape:FuelSchemeShape
+    a sh:NodeShape ;
+    sh:targetNode gppd:FuelScheme ;
+    sh:class skos:ConceptScheme ;
+    sh:property [
+        sh:path [ sh:inversePath skos:inScheme ] ;
+        sh:minCount 15 ; sh:maxCount 15 ;
+        sh:message "gppd:FuelScheme: exactly 15 fuel concepts." ;
+    ] .
+
+shape:EstimationMethodSchemeShape
+    a sh:NodeShape ;
+    sh:targetNode gppd:EstimationMethodScheme ;
+    sh:class skos:ConceptScheme ;
+    sh:property [
+        sh:path [ sh:inversePath skos:inScheme ] ;
+        sh:minCount 5 ; sh:maxCount 5 ;
+        sh:message "gppd:EstimationMethodScheme: exactly 5 method concepts." ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 6. OUR PUBLICATION  ·  the main dcat:Dataset
+#    Targeted as the object of dcterms:isPartOf, so the two generation
+#    qb:DataSets (also dcat:Dataset) do not need licence, publisher etc.
+#    The diagram gives those properties to the main dataset only.
+# ---------------------------------------------------------------------
+
+shape:MainDatasetShape
+    a sh:NodeShape ;
+    rdfs:label "Published dataset" ;
+    sh:targetObjectsOf dcterms:isPartOf ;
+    sh:nodeKind sh:IRI ;
+    sh:class dcat:Dataset ;
+    sh:not [ sh:class qb:DataSet ] ;
+
+    sh:property [
+        sh:path dcterms:title ;
+        sh:datatype rdf:langString ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: exactly one title, a language-tagged string." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:datatype rdf:langString ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: exactly one description, a language-tagged string." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:license ;
+        sh:hasValue <https://creativecommons.org/licenses/by/4.0/> ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: the licence must be CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:publisher ;
+        sh:class prov:Organization ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: exactly one publisher (the project group), a prov:Organization." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: exactly one source IRI (WRI GPPD v1.3.0)." ;
+    ] ;
+    sh:property [
+        sh:path dcat:version ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Dataset: exactly one version, xsd:string." ;
+    ] ;
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:class dcat:Distribution ;
+        sh:minCount 1 ;
+        sh:message "Dataset: at least one dcat:Distribution." ;
+    ] .
+
+# Implied by identifier [1]: each GPPD identifier belongs to one plant only.
+shape:UniquePlantIdentifierShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcterms:isPartOf ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Dataset: the GPPD identifier {?value} is used by more than one power plant." ;
+        sh:select """
+            PREFIX dbo: <http://dbpedia.org/ontology/>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT $this ?value WHERE {
+                ?plant a dbo:PowerStation ;
+                       dcterms:isPartOf $this ;
+                       dcterms:identifier ?value .
+            }
+            GROUP BY $this ?value
+            HAVING (COUNT(DISTINCT ?plant) > 1)
+        """ ;
+    ] .
+
+# Beyond the diagram (good FAIR practice): Warning, not Violation.
+shape:DistributionShape
+    a sh:NodeShape ;
+    rdfs:label "Distribution" ;
+    sh:targetClass dcat:Distribution ;
+    sh:targetObjectsOf dcat:distribution ;
+    sh:class dcat:Distribution ;
+    sh:severity sh:Warning ;
+    sh:property [
+        sh:path dcat:downloadURL ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Distribution: should have a dcat:downloadURL." ;
+    ] ;
+    sh:property [
+        sh:path dcat:mediaType ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ; sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Distribution: should have one dcat:mediaType IRI (e.g. IANA text/turtle)." ;
+    ] .
+
+
+# ---------------------------------------------------------------------
+# 7. GENERATION DATASETS  ·  qb:DataSet (also dcat:Dataset)
+# ---------------------------------------------------------------------
+
+shape:GenerationDataSetShape
+    a sh:NodeShape ;
+    rdfs:label "Generation dataset" ;
+    sh:targetClass qb:DataSet ;
+    sh:targetObjectsOf qb:dataSet ;
+    sh:nodeKind sh:IRI ;
+    sh:class qb:DataSet , dcat:Dataset ;
+    sh:in ( gppd:reportedGeneration gppd:estimatedGeneration ) ;
+    sh:message "Generation dataset: only gppd:reportedGeneration and gppd:estimatedGeneration, each typed qb:DataSet and dcat:Dataset." ;
+
+    sh:property [
+        sh:path qb:structure ;
+        sh:hasValue gppd:generationDSD ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Generation dataset: qb:structure must be gppd:generationDSD." ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:nodeKind sh:IRI ;
+        sh:class dcat:Dataset ;
+        sh:node [ sh:not [ sh:class qb:DataSet ] ] ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Generation dataset: exactly one dcterms:isPartOf, the main dcat:Dataset." ;
+    ] .
+
+# gppd:generationDSD: dimensions gppd:plant + sdmx-dimension:refPeriod,
+# measure sdmx-measure:obsValue, attributes sdmx-attribute:unitMeasure +
+# gppd:estimationMethod (the resources table of the diagram).
+shape:GenerationDSDShape
+    a sh:NodeShape ;
+    rdfs:label "Data structure definition" ;
+    sh:targetNode gppd:generationDSD ;
+    sh:targetObjectsOf qb:structure ;
+    sh:class qb:DataStructureDefinition ;
+
+    sh:property [
+        sh:path qb:component ;
+        sh:minCount 5 ; sh:maxCount 5 ;
+        sh:message "DSD: exactly 5 components (2 dimensions, 1 measure, 2 attributes)." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:dimension ) ;
+        sh:in ( gppd:plant sdmx-dimension:refPeriod ) ;
+        sh:minCount 2 ; sh:maxCount 2 ;
+        sh:message "DSD: the dimensions must be gppd:plant and sdmx-dimension:refPeriod." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:dimension ) ;
+        sh:hasValue gppd:plant ;
+        sh:message "DSD: gppd:plant must be a dimension." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:dimension ) ;
+        sh:hasValue sdmx-dimension:refPeriod ;
+        sh:message "DSD: sdmx-dimension:refPeriod must be a dimension." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:measure ) ;
+        sh:hasValue sdmx-measure:obsValue ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "DSD: the only measure must be sdmx-measure:obsValue." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:attribute ) ;
+        sh:in ( sdmx-attribute:unitMeasure gppd:estimationMethod ) ;
+        sh:minCount 2 ; sh:maxCount 2 ;
+        sh:message "DSD: the attributes must be sdmx-attribute:unitMeasure and gppd:estimationMethod." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:attribute ) ;
+        sh:hasValue sdmx-attribute:unitMeasure ;
+        sh:message "DSD: sdmx-attribute:unitMeasure must be an attribute." ;
+    ] ;
+    sh:property [
+        sh:path ( qb:component qb:attribute ) ;
+        sh:hasValue gppd:estimationMethod ;
+        sh:message "DSD: gppd:estimationMethod must be an attribute." ;
+    ] .
+
+# Each component specification holds exactly one dimension, measure or attribute.
+shape:ComponentShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf qb:component ;
+    sh:xone (
+        [ sh:property [ sh:path qb:dimension ; sh:minCount 1 ; sh:maxCount 1 ] ;
+          sh:property [ sh:path qb:measure   ; sh:maxCount 0 ] ;
+          sh:property [ sh:path qb:attribute ; sh:maxCount 0 ] ]
+        [ sh:property [ sh:path qb:measure   ; sh:minCount 1 ; sh:maxCount 1 ] ;
+          sh:property [ sh:path qb:dimension ; sh:maxCount 0 ] ;
+          sh:property [ sh:path qb:attribute ; sh:maxCount 0 ] ]
+        [ sh:property [ sh:path qb:attribute ; sh:minCount 1 ; sh:maxCount 1 ] ;
+          sh:property [ sh:path qb:dimension ; sh:maxCount 0 ] ;
+          sh:property [ sh:path qb:measure   ; sh:maxCount 0 ] ]
+    ) ;
+    sh:message "DSD component: exactly one of qb:dimension, qb:measure or qb:attribute." .
+
+
+# ---------------------------------------------------------------------
+# 8. ANNUAL GENERATION  ·  qb:Observation (one per plant, year, dataset)
+# ---------------------------------------------------------------------
+
+shape:ObservationShape
+    a sh:NodeShape ;
+    rdfs:label "Annual generation observation" ;
+    sh:targetClass qb:Observation ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [
+        sh:path qb:dataSet ;
+        sh:in ( gppd:reportedGeneration gppd:estimatedGeneration ) ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: exactly one qb:dataSet, gppd:reportedGeneration or gppd:estimatedGeneration." ;
+    ] ;
+    sh:property [
+        sh:path gppd:plant ;
+        sh:nodeKind sh:IRI ;
+        sh:class dbo:PowerStation ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: exactly one plant (gppd:plant), a dbo:PowerStation." ;
+    ] ;
+    sh:property [
+        sh:path sdmx-dimension:refPeriod ;
+        sh:datatype xsd:gYear ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: exactly one year (sdmx-dimension:refPeriod), xsd:gYear." ;
+    ] ;
+    sh:property [
+        sh:path sdmx-measure:obsValue ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: exactly one value in GWh, xsd:decimal (zero and negative values are real source values)." ;
+    ] ;
+    sh:property [
+        sh:path sdmx-attribute:unitMeasure ;
+        sh:hasValue unit:GigaW-HR ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: the unit must be exactly unit:GigaW-HR." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:class prov:Organization ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Observation: exactly one source, a prov:Organization." ;
+    ] ;
+    sh:property [
+        sh:path gppd:estimationMethod ;
+        sh:node shape:EstimationMethodConceptShape ;
+        sh:maxCount 1 ;
+        sh:message "Observation: at most one estimation method, from gppd:EstimationMethodScheme." ;
+    ] .
+
+# Rule: reported values (2013-2019) have no estimation method;
+#       estimated values (2013-2017) have exactly one.
+shape:ObservationKindShape
+    a sh:NodeShape ;
+    sh:targetClass qb:Observation ;
+    sh:xone ( shape:ReportedObservation shape:EstimatedObservation ) ;
+    sh:message "Observation: either reported (2013-2019, no estimation method) or estimated (2013-2017, exactly one estimation method)." .
+
+shape:ReportedObservation
+    a sh:NodeShape ;
+    sh:property [ sh:path qb:dataSet ; sh:hasValue gppd:reportedGeneration ] ;
+    sh:property [ sh:path gppd:estimationMethod ; sh:maxCount 0 ] ;
+    sh:property [
+        sh:path sdmx-dimension:refPeriod ;
+        sh:in ( "2013"^^xsd:gYear "2014"^^xsd:gYear "2015"^^xsd:gYear "2016"^^xsd:gYear
+                "2017"^^xsd:gYear "2018"^^xsd:gYear "2019"^^xsd:gYear ) ;
+    ] .
+
+shape:EstimatedObservation
+    a sh:NodeShape ;
+    sh:property [ sh:path qb:dataSet ; sh:hasValue gppd:estimatedGeneration ] ;
+    sh:property [ sh:path gppd:estimationMethod ; sh:minCount 1 ] ;
+    sh:property [
+        sh:path sdmx-dimension:refPeriod ;
+        sh:in ( "2013"^^xsd:gYear "2014"^^xsd:gYear "2015"^^xsd:gYear
+                "2016"^^xsd:gYear "2017"^^xsd:gYear ) ;
+    ] .
+
+# Rule: one observation per plant, year and dataset. Runs once per
+# dataset (not once per observation), so it stays fast on the full data.
+shape:UniqueObservationShape
+    a sh:NodeShape ;
+    sh:targetClass qb:DataSet ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Observation: more than one value for plant {?plant} in year {?year}." ;
+        sh:select """
+            PREFIX qb: <http://purl.org/linked-data/cube#>
+            PREFIX gppd: <https://w3id.org/gppd-ld/ontology#>
+            PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+            SELECT $this ?plant ?year WHERE {
+                ?obs a qb:Observation ;
+                     qb:dataSet $this ;
+                     gppd:plant ?plant ;
+                     sdmx-dimension:refPeriod ?year .
+            }
+            GROUP BY $this ?plant ?year
+            HAVING (COUNT(DISTINCT ?obs) > 1)
+        """ ;
+    ] .

@@ -1,0 +1,16 @@
+# Installed capacity (GW) and number of plants per fuel in one country (here Portugal).
+# Uses the EU country IRI and the fuel labels from the SKOS scheme.
+PREFIX dbo:     <http://dbpedia.org/ontology/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX country: <http://publications.europa.eu/resource/authority/country/>
+
+SELECT ?fuel (COUNT(?plant) AS ?plants) (ROUND(SUM(?watts) / 1e7) / 100 AS ?gigawatts)
+WHERE {
+  ?plant dbo:country country:PRT ;
+         dbo:installedCapacity ?watts ;
+         dbo:primaryFuelType ?f .
+  ?f skos:prefLabel ?fuel .
+  FILTER (LANG(?fuel) = "en")
+}
+GROUP BY ?fuel
+ORDER BY DESC(?gigawatts)

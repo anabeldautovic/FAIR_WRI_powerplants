@@ -1,0 +1,16 @@
+# Provenance: how many generation observations each organisation supplied,
+# per data set (reported values come from national agencies, estimates from WRI).
+PREFIX dbo:     <http://dbpedia.org/ontology/>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?dataSet ?source (COUNT(?obs) AS ?observations)
+WHERE {
+  ?obs a qb:Observation ;
+       qb:dataSet ?dataSet ;
+       prov:wasAttributedTo/rdfs:label ?source .
+}
+GROUP BY ?dataSet ?source
+ORDER BY DESC(?observations)
